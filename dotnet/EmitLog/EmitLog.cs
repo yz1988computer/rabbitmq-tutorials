@@ -14,7 +14,10 @@ class EmitLog
 
             var message = GetMessage(args);
             var body = Encoding.UTF8.GetBytes(message);
-            channel.BasicPublish(exchange: "logs", routingKey: "", basicProperties: null, body: body);
+            channel.BasicPublish(exchange: "logs"
+            , routingKey: ""
+            , basicProperties: null
+            , body: body);
             Console.WriteLine(" [x] Sent {0}", message);
         }
 

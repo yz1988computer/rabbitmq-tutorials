@@ -11,7 +11,6 @@ class Program
         using(var channel = connection.CreateModel())
         {
             channel.ExchangeDeclare(exchange: "logs", type: ExchangeType.Fanout);
-
             var message = GetMessage(args);
             var body = Encoding.UTF8.GetBytes(message);
             channel.BasicPublish(exchange: "logs", routingKey: "", basicProperties: null, body: body);
