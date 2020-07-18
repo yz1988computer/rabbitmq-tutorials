@@ -29,7 +29,7 @@ class Program
                 {
                     var message = Encoding.UTF8.GetString(ea.Body.ToArray());
                     int n = int.Parse(message);
-                    Console.WriteLine(" [.] fib({0})", message);
+                    Console.WriteLine($" [.] fib({message})");
                     response = fib(n).ToString();
                 }
                 catch (Exception e)
